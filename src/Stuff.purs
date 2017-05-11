@@ -24,7 +24,9 @@ import Control.Monad.Aff.Class (liftAff) as Export
 import Control.Monad.Eff.Class (liftEff) as Export
 import Control.Monad.Eff.Exception (Error) as Export
 import Control.Monad.IO (IO, launchIO, runIO, runIO') as Export
+import Control.Monad.IO.Class (class MonadIO, liftIO) as Export
 import Control.Monad.IOSync (IOSync, runIOSync, runIOSync') as Export
+import Control.Monad.IOSync.Class (class MonadIOSync, liftIOSync) as Export
 import Control.Monad.Rec.Class (Step(..), class MonadRec, tailRecM, tailRecM2, tailRecM3, tailRec, forever) as Export
 import Control.MonadPlus (class MonadPlus) as Export
 import Control.MonadZero (class MonadZero, guard) as Export
