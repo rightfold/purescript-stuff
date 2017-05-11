@@ -89,6 +89,7 @@ import Data.Symbol (SProxy(..), class IsSymbol, reflectSymbol, reifySymbol) as E
 import Data.Traversable (class Traversable, sequence, traverse, for, scanl, scanr) as Export
 import Data.Tuple (Tuple(..), fst, snd, curry, uncurry, swap) as Export
 import Data.Tuple.Nested (type (/\), (/\)) as Export
+import Debug.Trace (trace, traceShow, traceAny, spy, traceAnyA, traceA, traceShowA, traceAnyM, traceShowM) as Export
 import Partial (crash, crashWith) as Export
 import Partial.Unsafe (unsafePartial, unsafeCrashWith) as Export
 import Type.Proxy (Proxy(..), Proxy2(..), Proxy3(..)) as Export
