@@ -83,8 +83,9 @@ import Data.Profunctor (class Profunctor, dimap, arr) as Export
 import Data.Profunctor.Choice (class Choice, (+++), (|||)) as Export
 import Data.Profunctor.Closed (class Closed, closed) as Export
 import Data.Profunctor.Costar (Costar(..)) as Export
+import Data.Profunctor.Costrong (class Costrong, unsecond, unfirst) as Export
 import Data.Profunctor.Star (Star(..)) as Export
-import Data.Profunctor.Strong ((***), (&&&)) as Export
+import Data.Profunctor.Strong (class Strong, (***), (&&&), second, first) as Export
 import Data.Symbol (SProxy(..), class IsSymbol, reflectSymbol, reifySymbol) as Export
 import Data.Traversable (class Traversable, sequence, traverse, for, scanl, scanr) as Export
 import Data.Tuple (Tuple(..), fst, snd, curry, uncurry, swap) as Export
