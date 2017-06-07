@@ -1,6 +1,7 @@
 module Stuff
   ( module Prelude
   , module Export
+  , type (\/)
   , log
   , logError
   , logInfo
@@ -8,7 +9,10 @@ module Stuff
   , dlmap
   , drmap
   , (\)
-  , type (\/)
+  , compose2, (\\)
+  , compose3, (\\\)
+  , compose4, (\\\\)
+  , compose5, (\\\\\)
   ) where
 
 import Prelude
@@ -103,6 +107,8 @@ import Data.Either (Either)
 import Data.Profunctor (class Profunctor)
 import Data.Profunctor as Profunctor
 
+infixr 6 type Either as \/
+
 log :: String -> IOSync Unit
 log = liftEff \ Console.log
 
@@ -122,5 +128,19 @@ drmap :: ∀ a b c p. Profunctor p => (b -> c) -> p a b -> p a c
 drmap = Profunctor.rmap
 
 infixr 9 compose as \
+infixr 9 compose2 as \\
+infixr 9 compose3 as \\\
+infixr 9 compose4 as \\\\
+infixr 9 compose5 as \\\\\
 
-infixr 6 type Either as \/
+compose2 :: forall t100 t101 t102 t98 t99. Semigroupoid t99 => t99 t101 t100 -> (t98 -> t99 t102 t101) -> t98 -> t99 t102 t100
+compose2 f g = (f \ _) \ g
+
+compose3 :: forall t86 t90 t91 t92 t93 t94. Semigroupoid t91 => t91 t93 t92 -> (t86 -> t90 -> t91 t94 t93) -> t86 -> t90 -> t91 t94 t92
+compose3 f g = ((f \ _) \ _) \ g
+
+compose4 :: forall t70 t74 t78 t79 t80 t81 t82. Semigroupoid t79 => t79 t81 t80 -> (t70 -> t74 -> t78 -> t79 t82 t81) -> t70 -> t74 -> t78 -> t79 t82 t80
+compose4 f g = (((f \ _) \ _) \ _) \ g
+
+compose5 :: forall t50 t54 t58 t62 t63 t64 t65 t66. Semigroupoid t63 => t63 t65 t64 -> (t50 -> t54 -> t58 -> t62 -> t63 t66 t65) -> t50 -> t54 -> t58 -> t62 -> t63 t66 t64
+compose5 f g = ((((f \ _) \ _) \ _) \ _) \ g
