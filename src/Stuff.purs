@@ -59,7 +59,7 @@ import Data.Functor.Mu (Mu(..), transMu, roll, unroll) as Export
 import Data.Functor.Nu (Nu) as Export
 import Data.Functor.Product (Product(..)) as Export
 import Data.Functor.Product.Nested (type (</\>)) as Export
-import Data.Group (class Group, ginverse, class CommutativeSemigroup, Abelian) as Export
+import Data.Group (class Group, ginverse, Abelian) as Export
 import Data.Identity (Identity(..)) as Export
 import Data.Int (even, odd) as Export
 import Data.Int.Bits ((.&.), (.|.), (.^.), shl, shr, zshr) as Export
@@ -90,6 +90,7 @@ import Data.Profunctor.Costar (Costar(..)) as Export
 import Data.Profunctor.Costrong (class Costrong, unsecond, unfirst) as Export
 import Data.Profunctor.Star (Star(..)) as Export
 import Data.Profunctor.Strong (class Strong, (***), (&&&), second, first) as Export
+import Data.Semigroup.Commutative (class Commutative) as Export
 import Data.Symbol (SProxy(..), class IsSymbol, reflectSymbol, reifySymbol) as Export
 import Data.Traversable (class Traversable, sequence, traverse, for, scanl, scanr) as Export
 import Data.Tuple (Tuple(..), fst, snd, curry, uncurry, swap) as Export
