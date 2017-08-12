@@ -103,24 +103,24 @@ import Unsafe.Coerce (unsafeCoerce) as Export
 
 import Control.Monad.Eff.Class (liftEff)
 import Control.Monad.Eff.Console as Console
-import Control.Monad.IOSync (IOSync)
+import Control.Monad.IOSync.Class (class MonadIOSync, liftIOSync)
 import Data.Either (Either)
 import Data.Profunctor (class Profunctor)
 import Data.Profunctor as Profunctor
 
 infixr 6 type Either as \/
 
-log :: String -> IOSync Unit
-log = liftEff \ Console.log
+log :: forall m. MonadIOSync m => String -> m Unit
+log = liftIOSync \ liftEff \ Console.log
 
-logError :: String -> IOSync Unit
-logError = liftEff \ Console.error
+logError :: forall m. MonadIOSync m => String -> m Unit
+logError = liftIOSync \ liftEff \ Console.error
 
-logInfo :: String -> IOSync Unit
-logInfo = liftEff \ Console.info
+logInfo :: forall m. MonadIOSync m => String -> m Unit
+logInfo = liftIOSync \ liftEff \ Console.info
 
-logWarning :: String -> IOSync Unit
-logWarning = liftEff \ Console.warn
+logWarning :: forall m. MonadIOSync m => String -> m Unit
+logWarning = liftIOSync \ liftEff \ Console.warn
 
 dlmap :: ∀ a b c p. Profunctor p => (a -> b) -> p b c -> p a c
 dlmap = Profunctor.lmap
