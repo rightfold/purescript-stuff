@@ -78,7 +78,7 @@ import Data.Monoid.Disj (Disj(..)) as Export
 import Data.Monoid.Dual (Dual(..)) as Export
 import Data.Monoid.Endo (Endo(..)) as Export
 import Data.Monoid.Multiplicative (Multiplicative(..)) as Export
-import Data.Newtype (class Newtype, unwrap, wrap, ala, over, overF, under, underF, over2, overF2, under2, underF2) as Export
+import Data.Newtype (class Newtype, un, unwrap, wrap, ala, over, overF, under, underF, over2, overF2, under2, underF2) as Export
 import Data.Op (Op(..)) as Export
 import Data.Ord (abs, signum, class Ord1, compare1) as Export
 import Data.Ord.Max (Max(..)) as Export
